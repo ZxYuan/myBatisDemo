@@ -15,7 +15,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MyBatisTest {
 	
-	//@Test
+	@Test
 	public void testSelect() throws Exception {
 		Reader reader = null;
 		SqlSessionFactory sqlSessionFactory = null;
@@ -31,7 +31,7 @@ public class MyBatisTest {
         try {
         	//User user = (User) session.selectOne("me.yuan.mybatisDemo.models.UserMapper.selectUserByID", 1);
         	IUserOperation userOperation=session.getMapper(IUserOperation.class);
-            User user = userOperation.selectUserByID(1);
+            User user = userOperation.selectUserByID(3);
         	System.out.println(user.getUserName());
         	System.out.println(user.getUserAddress());
         } finally {
@@ -120,7 +120,7 @@ public class MyBatisTest {
         }
 	}
 	
-	@Test
+	//@Test
 	public void testDelete() throws Exception {
 		Reader reader = null;
 		SqlSessionFactory sqlSessionFactory = null;

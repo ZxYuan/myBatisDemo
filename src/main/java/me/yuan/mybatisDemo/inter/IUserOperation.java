@@ -4,6 +4,7 @@ import java.util.List;
 
 import me.yuan.mybatisDemo.model.User;
 
+
 public interface IUserOperation {    
     public User selectUserByID(int id);
     public List<User> selectUsers(String userName);
