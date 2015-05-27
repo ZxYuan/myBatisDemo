@@ -22,13 +22,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `userAge` int(11) DEFAULT NULL,
   `userAddress` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table mybatisdemo.user: ~1 rows (approximately)
+-- Dumping data for table mybatisdemo.user: ~0 rows (approximately)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `userName`, `userAge`, `userAddress`) VALUES
-	(1, 'summer', 100, 'shanghai,pudong');
+	(1, 'summer', 100, 'shanghai,pudong'),
+	(3, 'Hama', 80, 'Yangzhou'),
+	(4, 'Jiang', 80, 'Naive'),
+	(5, '江蛤蛤', 80, '火星');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

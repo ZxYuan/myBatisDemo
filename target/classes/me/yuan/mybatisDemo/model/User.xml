@@ -2,8 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+
+
 <mapper namespace="me.yuan.mybatisDemo.inter.IUserOperation">
+    <!-- Select one user by id -->
     <select id="selectUserByID" parameterType="int" resultType="User">
         select * from `user` where id = #{id}
     </select>
+    
+    <!-- Select users as a list by user's name -->
+    <select id="selectUsers" parameterType="string" resultMap="resultListUser">
+        select * from user where userName like #{userName}
+    </select>
+    <!-- result type definition for user list -->
+    <resultMap type="User" id="resultListUser">
+        <id column="id" property="id" />
+        <result column="userName" property="userName" />
+        <result column="userAge" property="userAge" />
+        <result column="userAddress" property="userAddress" />
+	</resultMap>
+    
+    <!-- Add one user -->
+    <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+         insert into user(userName,userAge,userAddress)  
+             values(#{userName},#{userAge},#{userAddress})  
+    </insert>
+    
+    <!-- Update -->
+    <update id="updateUser" parameterType="User">
+         update user set userName=#{userName},userAge=#{userAge},userAddress=#{userAddress} 
+         where id=#{id}
+    </update>
+    
+    <!-- Delete -->
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
 </mapper>
+

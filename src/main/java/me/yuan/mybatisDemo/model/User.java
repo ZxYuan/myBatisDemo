@@ -4,7 +4,7 @@ public class User {
     
     private int id;
     private String userName;
-    private String userAge;
+    private int userAge;
     private String userAddress;
     
     public int getId() {
@@ -19,11 +19,11 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public String getUserAge() {
+    public int getUserAge() {
         return userAge;
     }
-    public void setUserAge(String userAge) {
-        this.userAge = userAge;
+    public void setUserAge(int age) {
+        this.userAge = age;
     }
     public String getUserAddress() {
         return userAddress;
@@ -33,15 +33,3 @@ public class User {
     }
 
 }
-/*
- Create TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(50) DEFAULT NULL,
-  `userAge` int(11) DEFAULT NULL,
-  `userAddress` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
-
-Insert INTO `user` VALUES ('1', 'summer', '100', 'shanghai,pudong');
- */
